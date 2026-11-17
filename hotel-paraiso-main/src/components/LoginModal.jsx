@@ -23,7 +23,7 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
         throw new Error("La respuesta del servidor no contiene una sesión válida.");
       }
       await Swal.fire({
-        icon: "success", title: `¡Bienvenido, ${resultado.usuario.nombre || "usuario"}!`,
+        icon: "success", title: `¡Bienvenido", ${resultado.usuario.nombre || "usuario"}!`,
         text: "Sesión iniciada correctamente", confirmButtonText: "Continuar",
         confirmButtonColor: "#344c5c"
       });
@@ -142,4 +142,3 @@ function LoginModal({ mostrar, cerrar, onLogin }) {
 }
  
 export default LoginModal;
-

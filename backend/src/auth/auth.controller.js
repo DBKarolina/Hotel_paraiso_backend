@@ -1,14 +1,14 @@
 const { z } = require("zod");
 const { registroSchema, loginSchema } = require("./auth.schema");
 const authService = require("./auth.service");
- 
+
 function responderError(res, error) {
   console.error("Error de autenticación:", error.message);
   return res.status(error.status || 500).json({
     mensaje: error.status ? error.message : "Error interno del servidor"
   });
 }
- 
+
 async function registro(req, res) {
   const validacion = registroSchema.safeParse(req.body);
   if (!validacion.success) {
@@ -24,7 +24,7 @@ async function registro(req, res) {
     return responderError(res, error);
   }
 }
- 
+
 async function login(req, res) {
   const validacion = loginSchema.safeParse(req.body);
   if (!validacion.success) {
@@ -40,11 +40,11 @@ async function login(req, res) {
     return responderError(res, error);
   }
 }
- 
+
 async function obtenerPerfil(req, res) {
   try {
     const usuario = await authService.obtenerUsuarioActual(req.usuarioId);
- 
+
     return res.status(200).json({
       mensaje: "Usuario autenticado",
       usuario
@@ -53,7 +53,7 @@ async function obtenerPerfil(req, res) {
     return responderError(res, error);
   }
 }
- 
+
 module.exports = {
   registro,
   login,

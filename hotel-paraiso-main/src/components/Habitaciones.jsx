@@ -4,7 +4,6 @@ import estandar from "../assets/estandar.jpeg"
 import premium from "../assets/premium.jpeg"
 import suite from "../assets/suite.jpeg"
 
-
 const habitaciones = [
     {
         id: 1,
@@ -13,7 +12,6 @@ const habitaciones = [
         precio: 150000,
         imagen: estandar
     },
-
 
     {
         id: 2,
@@ -31,7 +29,6 @@ const habitaciones = [
     }
 ];
 
-
 function Habitaciones() {
     return (
         <section className="py-5 bg-light" id="habitaciones">
@@ -40,7 +37,6 @@ function Habitaciones() {
                 <p className="text-center text-secondary mb-5">
                     Descubre nuestras habitaciones diseñadas para tu comodidad y descanso
                 </p>
-
 
                 <div className="row">
                     {habitaciones.map((habitacion) => (
@@ -54,6 +50,5 @@ function Habitaciones() {
         </section>
     )
 }
-
 
 export default Habitaciones

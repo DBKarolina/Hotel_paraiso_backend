@@ -1,5 +1,3 @@
-// operaciones para consultar, desactivar, activar las habitaciones
-
 const pool = require('../config/db');
  
 async function listar() {
@@ -41,3 +39,4 @@ async function desactivar(id) {
 }
  
 module.exports = { listar, buscarPorId, crear, actualizar, desactivar };
+ 
