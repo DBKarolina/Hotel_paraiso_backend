@@ -1,3 +1,4 @@
+TablaHabitaciones
 import { useState , useEffect  } from "react"
 import FormularioHabitacion from "./FormularioHabitacion"
 import Swal from "sweetalert2"
@@ -73,7 +74,7 @@ function TablaHabitaciones() {
     const eliminarHabitacion = async (habitacion) => {
         const resultado = await  Swal.fire({
             title :"Desactivar Habitación ?",
-            text: `Se desactivara la habitación ${habitacion.nombre}`,
+            text: "Se desactivara la habitación ${habitacion.nombre}",
             icon:"warning",
             showCancelButton: true,
             confirmButtonText:"Si, desactivar",
